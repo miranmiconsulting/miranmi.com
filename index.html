@@ -477,7 +477,7 @@ section[id]:not(#home) { padding-top: 8px; }
 .card h3 {
   font-size: 20px; font-weight: 600; letter-spacing: -0.02em;
   color: var(--text-bright); transition: color 0.5s;
-  word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;
+  word-wrap: break-word; overflow-wrap: break-word; hyphens: none;
 }
 .card:hover h3 { color: var(--white); }
 .card p {
@@ -622,6 +622,19 @@ select.form-input { appearance: none; }
   justify-content: space-between; gap: 16px; margin-top: 24px;
 }
 .form-footer .hint { font-size: 14px; color: rgba(255,255,255,0.2); }
+
+.form-status {
+  margin-top: 20px; padding: 16px 20px; border-radius: 12px;
+  font-size: 16px; line-height: 1.6; display: none;
+}
+.form-status.success {
+  display: block; background: rgba(52,211,153,0.08);
+  border: 1px solid rgba(52,211,153,0.25); color: #34d399;
+}
+.form-status.error {
+  display: block; background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.25); color: #ef4444;
+}
 
 /* ===== FOOTER ===== */
 .footer {
@@ -1153,7 +1166,7 @@ body.intro-active { overflow: hidden; }
 
     <div class="reveal" style="transition-delay:0.24s">
       <div data-lang="en">
-        <p class="hero-text">Miranmi Consulting & Analytics helps businesses identify what is missing, strengthen what matters, and prepare for growth through consulting, marketing, data analysis, certifications, and government readiness.</p>
+        <p class="hero-text">Miranmi Consulting & Analytics helps businesses identify opportunities, strengthen their foundation, and prepare for growth through consulting, marketing, data analysis, certifications, and government readiness.</p>
       </div>
       <div data-lang="es">
         <p class="hero-text">Miranmi Consulting & Analytics ayuda a las empresas a identificar lo que falta, fortalecer lo que importa y prepararse para el crecimiento a través de consultoría, marketing, análisis de datos, certificaciones y preparación gubernamental.</p>
@@ -1304,7 +1317,7 @@ body.intro-active { overflow: hidden; }
     <div data-lang="en">
       <div class="section-label">About Miranmi</div>
       <h2 class="section-title serif">Built with drive. Focused on growth.</h2>
-      <p class="section-text">Miranmi Consulting & Analytics was built on the belief that businesses need more than information — they need clarity, relevance, trust, and someone who can turn insight into execution.</p>
+      <p class="section-text">Miranmi Consulting & Analytics was built on the belief that businesses need more than information. They need clarity, relevance, trust, and a partner who can turn insight into execution.</p>
     </div>
     <div data-lang="es">
       <div class="section-label">Sobre Miranmi</div>
@@ -1336,8 +1349,8 @@ body.intro-active { overflow: hidden; }
       <div class="section-label" style="margin-top:8px;">
         <span data-i="en">Vision</span><span data-i="es">Visión</span>
       </div>
-      <div data-lang="en"><h3 class="serif" style="font-size:clamp(1.4rem,2.8vw,1.8rem)">To create a future where more businesses, entrepreneurs, and communities have the tools and opportunity to build meaningful success.</h3></div>
-      <div data-lang="es"><h3 class="serif" style="font-size:clamp(1.4rem,2.8vw,1.8rem)">Crear un futuro donde más empresas, emprendedores y comunidades tengan las herramientas y la oportunidad de construir un éxito significativo.</h3></div>
+      <div data-lang="en"><h3 class="serif" style="font-size:clamp(1.4rem,2.8vw,1.8rem)">To create a future where more businesses, entrepreneurs, and communities have the tools and opportunities to build meaningful success.</h3></div>
+      <div data-lang="es"><h3 class="serif" style="font-size:clamp(1.4rem,2.8vw,1.8rem)">Crear un futuro donde más empresas, emprendedores y comunidades tengan las herramientas y las oportunidades de construir un éxito significativo.</h3></div>
       <div class="bottom-line"></div>
     </div>
   </div>
@@ -1671,6 +1684,7 @@ body.intro-active { overflow: hidden; }
           </button>
         </div>
       </form>
+      <div id="formStatus" class="form-status"></div>
     </div>
   </div>
 </section>
@@ -1754,21 +1768,54 @@ function updatePlaceholders() {
   if (introSub) introSub.textContent = es ? 'Consultoría & Analítica' : 'Consulting & Analytics';
 }
 
-// Form submit
+// Form submit via Formspree
 function handleSubmit(e) {
   e.preventDefault();
   const es = document.body.classList.contains('lang-es');
   const f = e.target;
-  const data = new FormData(f);
-  const subject = encodeURIComponent(es ? 'Consulta desde el sitio web' : 'Website Inquiry');
-  const body = encodeURIComponent(
-    (es ? 'Nombre: ' : 'Name: ') + data.get('name') + '\n' +
-    (es ? 'Empresa: ' : 'Business: ') + data.get('business') + '\n' +
-    (es ? 'Correo: ' : 'Email: ') + data.get('email') + '\n' +
-    (es ? 'Soporte: ' : 'Support: ') + data.get('support') + '\n\n' +
-    data.get('message')
-  );
-  window.location.href = 'mailto:info@miranmi.com?subject=' + subject + '&body=' + body;
+  const btn = f.querySelector('button[type="submit"]');
+  const status = document.getElementById('formStatus');
+
+  // Update button to show sending state
+  btn.disabled = true;
+  btn.innerHTML = es
+    ? '<span>Enviando...</span>'
+    : '<span>Sending...</span>';
+  status.className = 'form-status';
+  status.style.display = 'none';
+
+  const formspreeUrl = 'https://formspree.io/f/meerrjly';
+
+  fetch(formspreeUrl, {
+    method: 'POST',
+    body: new FormData(f),
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(function(response) {
+    if (response.ok) {
+      status.className = 'form-status success';
+      status.textContent = es
+        ? 'Mensaje enviado. Nos pondremos en contacto pronto.'
+        : 'Message sent! We\'ll be in touch soon.';
+      f.reset();
+    } else {
+      return response.json().then(function(data) {
+        throw new Error(data.errors ? data.errors.map(function(e){ return e.message; }).join(', ') : 'Form submission failed');
+      });
+    }
+  })
+  .catch(function(err) {
+    status.className = 'form-status error';
+    status.textContent = es
+      ? 'Hubo un error al enviar. Por favor intente de nuevo.'
+      : 'Something went wrong. Please try again.';
+  })
+  .finally(function() {
+    btn.disabled = false;
+    btn.innerHTML = es
+      ? '<span data-i="es">Enviar consulta</span> <span>&rarr;</span>'
+      : '<span data-i="en">Send inquiry</span> <span>&rarr;</span>';
+  });
 }
 
 // Reveal on scroll
