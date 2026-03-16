@@ -615,7 +615,8 @@ section[id]:not(#home) { padding-top: 8px; }
 }
 .form-input::placeholder { color: rgba(255,255,255,0.25); }
 textarea.form-input { min-height: 170px; resize: vertical; }
-select.form-input { appearance: none; }
+select.form-input { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.3)' fill='none' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+select.form-input option { background: #1a1a2e; color: #fff; }
 
 .form-footer {
   display: flex; flex-wrap: wrap; align-items: center;
@@ -1643,10 +1644,6 @@ body.intro-active { overflow: hidden; }
           <span class="label">Email</span>
           <span class="value"><a href="mailto:info@miranmi.com">info@miranmi.com</a></span>
         </div>
-        <div class="contact-detail">
-          <span class="label">Web</span>
-          <span class="value"><a href="https://miranmi.com">miranmi.com</a></span>
-        </div>
       </div>
 
       <div class="contact-note">
@@ -1672,7 +1669,17 @@ body.intro-active { overflow: hidden; }
         </div>
         <div class="form-row two" style="margin-top:16px;">
           <input class="form-input" type="email" name="email" required>
-          <input class="form-input" type="text" name="support">
+          <select class="form-input" name="support">
+            <option value="" disabled selected></option>
+            <option value="Business Development">Business Development</option>
+            <option value="Consulting & Strategy">Consulting & Strategy</option>
+            <option value="Marketing & Branding">Marketing & Branding</option>
+            <option value="Data & Analytics">Data & Analytics</option>
+            <option value="Government Readiness">Government Readiness</option>
+            <option value="Certifications">Certifications</option>
+            <option value="Not sure yet">Not sure yet</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
         <div class="form-row" style="margin-top:16px;">
           <textarea class="form-input" name="message" required></textarea>
@@ -1759,7 +1766,7 @@ function updatePlaceholders() {
     f.querySelector('[name="name"]').placeholder = es ? 'Su nombre' : 'Your name';
     f.querySelector('[name="business"]').placeholder = es ? 'Nombre de empresa' : 'Business name';
     f.querySelector('[name="email"]').placeholder = es ? 'Su correo electrónico' : 'Your email';
-    f.querySelector('[name="support"]').placeholder = es ? 'Tipo de soporte' : 'Type of support';
+    f.querySelector('[name="support"] option[disabled]').textContent = es ? 'Tipo de soporte' : 'Type of support';
     f.querySelector('[name="message"]').placeholder = es ? 'Cuéntenos qué está construyendo, qué no está funcionando, o qué tipo de soporte le ayudaría más.' : 'Tell us what you are building, what is not working, or what kind of support would help most.';
   }
   const skipBtn = document.querySelector('.intro-skip');
