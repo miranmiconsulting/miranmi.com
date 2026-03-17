@@ -775,7 +775,6 @@ body.intro-active { overflow: hidden; }
 
 .intro-logo-wrap {
   display: flex; flex-direction: column; align-items: center;
-  transform: scale(1); transition: transform 1s cubic-bezier(0.16,1,0.3,1);
 }
 .intro-logo-wrap svg {
   width: 260px; height: 260px; overflow: visible;
@@ -784,27 +783,34 @@ body.intro-active { overflow: hidden; }
   .intro-logo-wrap svg { width: 340px; height: 340px; }
 }
 
-/* Intro bar animations — bigger, more dramatic */
+/* Intro bar animations — staggered fade-in with logo zoom */
 .intro-bar-left,
 .intro-bar-middle,
 .intro-bar-right {
-  transform-box: fill-box !important;
-  transform-origin: bottom center !important;
   opacity: 0;
 }
 .intro-playing .intro-bar-left {
-  animation: introBarRise 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  animation: introBarReveal 1s ease 0.3s both;
 }
 .intro-playing .intro-bar-middle {
-  animation: introBarRise 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+  animation: introBarReveal 1s ease 0.7s both;
 }
 .intro-playing .intro-bar-right {
-  animation: introBarRise 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both;
+  animation: introBarReveal 1s ease 1.1s both;
 }
-@keyframes introBarRise {
-  0% { transform: translateY(60px) scaleY(0.05); opacity: 0; }
-  40% { opacity: 1; }
-  100% { transform: translateY(0) scaleY(1); opacity: 1; }
+@keyframes introBarReveal {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.intro-logo-wrap {
+  transform: scale(0.88);
+}
+.intro-playing .intro-logo-wrap {
+  animation: introLogoZoom 3s cubic-bezier(0.16,1,0.3,1) 0.2s both;
+}
+@keyframes introLogoZoom {
+  0% { transform: scale(0.88); }
+  100% { transform: scale(1); }
 }
 
 /* Glow pulse behind the logo during intro */
@@ -1088,6 +1094,57 @@ body.intro-active { overflow: hidden; }
 </head>
 <body>
 
+<!-- ===== INTRO CINEMATIC ===== -->
+<div class="intro-overlay" id="introOverlay">
+  <div class="intro-glow"></div>
+  <div class="intro-particles">
+    <div class="intro-particle" style="left:15%;top:60%;animation-delay:0.8s"></div>
+    <div class="intro-particle" style="left:30%;top:45%;animation-delay:1.2s"></div>
+    <div class="intro-particle" style="left:55%;top:55%;animation-delay:1.5s"></div>
+    <div class="intro-particle" style="left:70%;top:40%;animation-delay:1.0s"></div>
+    <div class="intro-particle" style="left:85%;top:50%;animation-delay:1.8s"></div>
+    <div class="intro-particle" style="left:40%;top:65%;animation-delay:2.0s"></div>
+    <div class="intro-particle" style="left:60%;top:35%;animation-delay:1.3s"></div>
+    <div class="intro-particle" style="left:20%;top:50%;animation-delay:2.2s"></div>
+  </div>
+  <div class="intro-logo-wrap">
+    <svg viewBox="0 0 23623 23623" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+      <defs>
+        <linearGradient id="ig1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,1339.72,-5904.94,0,13251.5,8702.69)"><stop offset="0" style="stop-color:rgb(123,130,145);stop-opacity:0.87"/><stop offset="1" style="stop-color:rgb(86,93,107);stop-opacity:0.87"/></linearGradient>
+        <linearGradient id="ig2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,1057.83,-3137.89,0,2877,10835.3)"><stop offset="0" style="stop-color:rgb(123,130,145);stop-opacity:0.92"/><stop offset="1" style="stop-color:rgb(86,93,107);stop-opacity:0.92"/></linearGradient>
+      </defs>
+      <g transform="matrix(1,0,0,1,0,827.251)">
+        <g class="intro-bar-left">
+          <g transform="matrix(1.09,0,0,1.11,1342.5,495)">
+            <g transform="matrix(0.716,0,0,1.46,3920.6,-3742.5)"><path d="M5115.6,7302L5115.6,11706.8L3601,12324.8L3601,8026.5L5115.6,7302Z" style="fill:rgb(31,37,48);fill-opacity:0.5"/></g>
+            <g transform="matrix(0.292,0,0,1.265,4681,-1985.8)"><rect x="2737" y="7870" width="3521" height="4958" style="fill:url(#ig1)"/></g>
+            <g transform="matrix(1,0,0,1,2173.6,1693)"><path d="M5407.4,5222L4337.3,6279.4L3307.8,6279.4L5407.4,5222Z" style="fill:rgb(194,200,212);fill-opacity:0.9"/></g>
+          </g>
+        </g>
+        <g class="intro-bar-middle">
+          <g transform="matrix(1.09,0,0,1.51,8043.9,-5215.2)">
+            <g transform="matrix(0.716,0,0,1.46,3920.6,-3742.5)"><path d="M5115.6,7499.9L5115.6,11870.3L3601,12324.8L3601,8013L5115.6,7499.9Z" style="fill:rgb(31,37,48);fill-opacity:0.5"/></g>
+            <g transform="matrix(0.292,0,0,1.265,4681,-1985.8)"><rect x="2737" y="7870" width="3521" height="4958" style="fill:rgb(130,138,153)"/></g>
+            <g transform="matrix(1,0,0,1,2173.6,1693)"><path d="M5407.4,5510.9L4337.3,6279.4L3307.8,6279.4L5407.4,5510.9Z" style="fill:rgb(194,200,212);fill-opacity:0.9"/></g>
+          </g>
+        </g>
+        <g class="intro-bar-right">
+          <g transform="matrix(1.09,0,0,1,-1069.6,2012.2)">
+            <g transform="matrix(0.716,0,0,1.028,8324.9,-2637.6)"><path d="M6350.3,7422.6L6350.3,11281.4L4835.7,12255.4L4835.7,8564.4L6350.3,7422.6Z" style="fill:rgb(31,37,48);fill-opacity:0.47"/></g>
+            <g transform="matrix(0.292,0,0,0.945,9968.8,-1280.8)"><path d="M6258,7872.5C6258,7872.5 6255.1,11665.8 6254.9,11878.9C6254.9,11884.8 6247,11890.4 6233.3,11894L2737,12828L2737,7870L6258,7872.5Z" style="fill:url(#ig2)"/></g>
+            <g transform="matrix(1,0,0,1,7461.4,-160.5)"><path d="M5407.4,5153.8L4337.3,6319.1L3307.8,6319.1L5407.4,5153.8Z" style="fill:rgb(194,200,212);fill-opacity:0.9"/></g>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <div class="intro-name">MIRANMI</div>
+    <div class="intro-subtitle">Consulting & Analytics</div>
+  </div>
+  <div class="intro-line"></div>
+  <div class="intro-progress"><div class="intro-progress-bar"><div class="intro-progress-fill"></div></div></div>
+  <button class="intro-skip" onclick="finishIntro()">SKIP</button>
+</div>
+
 <div class="scroll-line" id="scrollLine"></div>
 <div class="noise"></div>
 <div class="bg-glow"><div class="g1"></div><div class="g2"></div><div class="g3"></div></div>
@@ -1184,18 +1241,18 @@ body.intro-active { overflow: hidden; }
         </div>
         <div data-lang="es" aria-hidden="true">
           Construya claridad.<br>
-          <span class="dim">Cree visibilidad.</span><br>
-          <span class="grad">Impulse el avance.</span>
+          <span class="dim">Genere visibilidad.</span><br>
+          <span class="grad">Impulse el crecimiento.</span>
         </div>
       </h1>
     </div>
 
     <div class="reveal" style="transition-delay:0.24s">
       <div data-lang="en">
-        <p class="hero-text">Miranmi Consulting & Analytics helps businesses strengthen their foundation, increase visibility, and prepare for growth through consulting, marketing, data analysis, certifications, and government readiness.</p>
+        <p class="hero-text">Miranmi helps businesses strengthen their foundation, increase visibility, and prepare for growth through consulting, marketing, data analysis, certifications, and government readiness.</p>
       </div>
       <div data-lang="es">
-        <p class="hero-text">Miranmi Consulting & Analytics ayuda a las empresas a fortalecer su base, aumentar su visibilidad y prepararse para el crecimiento a través de consultoría, marketing, análisis de datos, certificaciones y preparación para el sector público.</p>
+        <p class="hero-text">Miranmi ayuda a las empresas a fortalecer su base, aumentar su visibilidad y prepararse para el crecimiento mediante consultoría, marketing, análisis de datos, certificaciones y preparación para el sector público.</p>
       </div>
     </div>
 
@@ -1320,8 +1377,8 @@ body.intro-active { overflow: hidden; }
         <div class="preview-label"><span data-i="en">About Miranmi</span><span data-i="es">Sobre Miranmi</span></div>
         <h3 class="preview-title serif"><span data-lang="en">Built with drive. Focused on growth.</span><span data-lang="es">Creado con determinación. Enfocado en el crecimiento.</span></h3>
         <div class="preview-text">
-          <span data-lang="en">Miranmi Consulting & Analytics was built on the belief that businesses need more than information. They need clarity, trust, and practical support that turns insight into action.</span>
-          <span data-lang="es">Miranmi Consulting & Analytics fue creada con la convicción de que las empresas necesitan más que información. Necesitan claridad, confianza y apoyo práctico que convierta la perspectiva en acción.</span>
+          <span data-lang="en">Miranmi was built on the belief that businesses need more than information. They need clarity, trust, and practical support that turns insight into action.</span>
+          <span data-lang="es">Miranmi fue creada con la convicción de que las empresas necesitan más que información. Necesitan claridad, confianza y apoyo práctico que convierta la perspectiva en acción.</span>
         </div>
       </div>
       <a href="/about/" class="preview-cta">
@@ -1373,15 +1430,31 @@ body.intro-active { overflow: hidden; }
     <div class="cta-section">
       <div class="cta-glow1"></div>
       <div class="cta-glow2"></div>
-      <div class="cta-inner">
-        <div class="section-label"><span data-i="en">Ready to start?</span><span data-i="es">¿Listo para empezar?</span></div>
+      <div class="cta-inner" style="max-width:720px;">
+        <div class="section-label"><span data-i="en">Get started</span><span data-i="es">Comience aquí</span></div>
         <div data-lang="en">
-          <h2 class="serif">Let's build something stronger together.</h2>
-          <p>Whether you're starting, growing, or repositioning — we'll help you find clarity and build momentum.</p>
+          <h2 class="serif">Let's Start the Conversation</h2>
+          <p>Every business has different needs. Start with a free consultation to discuss your goals, priorities, and next steps.</p>
+          <div style="margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.05);">
+            <h3 style="font-size:18px;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.04em;margin-bottom:12px;">What to Expect</h3>
+            <p style="margin-top:0;">After you reach out, Miranmi will review your message and follow up to learn more about your business, your challenges, and what you're looking to achieve. From there, we'll outline potential next steps and determine the best way to support your goals.</p>
+          </div>
+          <div style="margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.05);">
+            <h3 style="font-size:18px;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.04em;margin-bottom:12px;">Get in Touch</h3>
+            <p style="margin-top:0;">Share a few details about your business and what you're looking for, and we'll follow up to continue the conversation.</p>
+          </div>
         </div>
         <div data-lang="es">
-          <h2 class="serif">Construyamos algo más fuerte juntos.</h2>
-          <p>Ya sea que esté comenzando, creciendo o reposicionándose — le ayudaremos a encontrar claridad y generar impulso.</p>
+          <h2 class="serif">Iniciemos la Conversación</h2>
+          <p>Cada empresa tiene necesidades diferentes. Comience con una consulta gratuita para hablar sobre sus objetivos, prioridades y próximos pasos.</p>
+          <div style="margin-top:36px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.05);">
+            <h3 style="font-size:18px;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.04em;margin-bottom:12px;">Qué Esperar</h3>
+            <p style="margin-top:0;">Después de comunicarse, Miranmi revisará su mensaje y le dará seguimiento para conocer más sobre su empresa, sus desafíos y lo que desea lograr. A partir de ahí, definiremos los próximos pasos posibles y la mejor manera de apoyar sus objetivos.</p>
+          </div>
+          <div style="margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.05);">
+            <h3 style="font-size:18px;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.04em;margin-bottom:12px;">Contáctenos</h3>
+            <p style="margin-top:0;">Comparta algunos detalles sobre su empresa y lo que está buscando, y le daremos seguimiento para continuar la conversación.</p>
+          </div>
         </div>
         <div style="margin-top:32px;">
           <a href="/contact/" class="btn-primary">
@@ -1534,6 +1607,28 @@ const counterObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('.stat-counter').forEach(el => counterObserver.observe(el));
+
+// ===== INTRO CINEMATIC =====
+(function() {
+  const overlay = document.getElementById('introOverlay');
+  if (!overlay) return;
+  const played = sessionStorage.getItem('miranmi_intro');
+  if (played) {
+    overlay.classList.add('intro-done');
+    return;
+  }
+  document.body.classList.add('intro-active');
+  requestAnimationFrame(() => overlay.classList.add('intro-playing'));
+  setTimeout(() => finishIntro(), 5200);
+})();
+
+function finishIntro() {
+  const overlay = document.getElementById('introOverlay');
+  if (!overlay || overlay.classList.contains('intro-done')) return;
+  overlay.classList.add('intro-done');
+  document.body.classList.remove('intro-active');
+  sessionStorage.setItem('miranmi_intro', '1');
+}
 
 // ===== COOKIE BANNER =====
 (function() {
