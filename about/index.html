@@ -297,17 +297,22 @@ section:first-of-type { padding-top: 60px; }
 
 /* ===== LEADER CARD ===== */
 .leader-card {
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-  padding: 48px 32px; border-radius: 20px;
+  display: flex; flex-direction: column; border-radius: 20px;
   border: 1px solid var(--border);
   background: var(--bg-card);
-  max-width: 520px; margin: 0 auto;
+  max-width: 720px; margin: 0 auto;
+  padding: 48px 40px;
 }
+@media (max-width: 639px) { .leader-card { padding: 36px 24px; } }
+.leader-header {
+  display: flex; align-items: center; gap: 24px;
+  margin-bottom: 32px;
+}
+@media (max-width: 639px) { .leader-header { flex-direction: column; text-align: center; } }
 .leader-avatar {
-  width: 140px; height: 140px; border-radius: 50%;
+  width: 120px; height: 120px; border-radius: 50%; flex-shrink: 0;
   border: 2px solid rgba(52,211,153,0.2);
   overflow: hidden;
-  margin-bottom: 24px;
 }
 .leader-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .leader-name {
@@ -316,8 +321,10 @@ section:first-of-type { padding-top: 60px; }
   letter-spacing: 0.06em;
 }
 .leader-role { font-size: 13px; text-transform: uppercase; letter-spacing: 0.25em; color: var(--emerald); margin-top: 6px; font-weight: 600; }
-.leader-bio { font-size: 17px; line-height: 1.75; color: var(--text); margin-top: 20px; max-width: 440px; }
-.leader-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 20px; }
+.leader-bio { font-size: 17px; line-height: 1.8; color: var(--text); margin-top: 0; }
+.leader-bio + .leader-bio { margin-top: 16px; }
+.leader-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+@media (max-width: 639px) { .leader-tags { justify-content: center; } }
 .leader-tag {
   padding: 5px 14px; border-radius: 999px; font-size: 13px; font-weight: 500;
   border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);
@@ -503,12 +510,12 @@ body:not(.lang-es) [data-i="en"] { display: inline; }
     <div data-lang="en">
       <div class="section-label">About Miranmi</div>
       <h1 class="section-title serif">Built with drive. Focused on growth.</h1>
-      <p class="section-text">Miranmi Consulting & Analytics was built on the belief that businesses need more than information. They need clarity, trust, and practical support that turns insight into action.</p>
+      <p class="section-text">Miranmi was built on the belief that businesses need more than information. They need clarity, trust, and practical support that turns insight into action.</p>
     </div>
     <div data-lang="es">
       <div class="section-label">Sobre Miranmi</div>
       <h1 class="section-title serif">Creado con determinación. Enfocado en el crecimiento.</h1>
-      <p class="section-text">Miranmi Consulting & Analytics fue creada con la convicción de que las empresas necesitan más que información. Necesitan claridad, confianza y apoyo práctico que convierta la perspectiva en acción.</p>
+      <p class="section-text">Miranmi fue creada con la convicción de que las empresas necesitan más que información. Necesitan claridad, confianza y apoyo práctico que convierta la perspectiva en acción.</p>
     </div>
   </div>
 </section>
@@ -579,16 +586,31 @@ body:not(.lang-es) [data-i="en"] { display: inline; }
 
   <div class="reveal-scale" style="margin-top:32px;">
     <div class="leader-card">
-      <div class="leader-avatar">
-        <img src="/michael-miranda.png" alt="Michael Miranda — Founder & Principal Consultant">
+      <div class="leader-header">
+        <div class="leader-avatar">
+          <img src="/michael-miranda.png" alt="Michael Miranda — Founder & Principal Consultant">
+        </div>
+        <div>
+          <div class="leader-name">MICHAEL MIRANDA</div>
+          <div class="leader-role"><span data-i="en">Founder & Principal Consultant</span><span data-i="es">Fundador y Consultor Principal</span></div>
+        </div>
       </div>
-      <div class="leader-name">MICHAEL MIRANDA</div>
-      <div class="leader-role"><span data-i="en">Founder & Principal Consultant</span><span data-i="es">Fundador y Consultor Principal</span></div>
-      <div data-lang="en"><p class="leader-bio">Michael Miranda is a U.S. military veteran and management consultant who helps businesses strengthen structure, improve visibility, and prepare for growth. His background combines business strategy, data analytics, government readiness, and operational support.</p></div>
-      <div data-lang="es"><p class="leader-bio">Michael Miranda es un veterano militar de EE.UU. y consultor de gestión que ayuda a las empresas a fortalecer su estructura, mejorar su visibilidad y prepararse para el crecimiento. Su trayectoria combina estrategia empresarial, analítica de datos, preparación gubernamental y apoyo operativo.</p></div>
+      <div data-lang="en">
+        <p class="leader-bio">Michael Miranda is the Founder & Principal Consultant of Miranmi, a consulting and analytics practice focused on helping businesses grow with clarity, insight, and strategic direction.</p>
+        <p class="leader-bio">He works with entrepreneurs, small businesses, and organizations to strengthen operations, improve visibility, and prepare for long-term growth — including opportunities in government contracting and data-informed decision-making.</p>
+        <p class="leader-bio">Michael brings a background in economics, analytics, and business strategy, along with leadership experience as a U.S. Veteran. His approach combines structured thinking, practical execution, and a commitment to delivering meaningful results for the businesses and communities he serves.</p>
+        <p class="leader-bio">He holds an MBA from the University of the Incarnate Word and a Master's degree in Economics from the University of Texas at San Antonio, with a concentration in business data analysis and forecasting.</p>
+      </div>
+      <div data-lang="es">
+        <p class="leader-bio">Michael Miranda es el Fundador y Consultor Principal de Miranmi, una firma de consultoría y análisis enfocada en ayudar a las empresas a crecer con claridad, visión y dirección estratégica.</p>
+        <p class="leader-bio">Trabaja con emprendedores, pequeñas empresas y organizaciones para fortalecer sus operaciones, mejorar su visibilidad y prepararse para el crecimiento a largo plazo, incluyendo oportunidades en contratos gubernamentales y en la toma de decisiones basada en datos.</p>
+        <p class="leader-bio">Michael aporta una sólida formación en economía, análisis y estrategia empresarial, junto con liderazgo forjado como veterano de las Fuerzas Armadas de Estados Unidos. Su enfoque combina pensamiento estructurado, ejecución práctica y un compromiso con generar resultados significativos para las empresas y comunidades a las que sirve.</p>
+        <p class="leader-bio">Cuenta con un MBA de la University of the Incarnate Word y una Maestría en Economía de The University of Texas at San Antonio, con concentración en análisis y pronóstico de datos empresariales.</p>
+      </div>
       <div class="leader-tags">
         <span class="leader-tag"><span data-i="en">U.S. Veteran</span><span data-i="es">Veterano EE.UU.</span></span>
-        <span class="leader-tag"><span data-i="en">Management Consulting</span><span data-i="es">Consultoría de Gestión</span></span>
+        <span class="leader-tag"><span data-i="en">MBA</span><span data-i="es">MBA</span></span>
+        <span class="leader-tag"><span data-i="en">M.A. Economics</span><span data-i="es">M.A. Economía</span></span>
         <span class="leader-tag"><span data-i="en">Data Analytics</span><span data-i="es">Análisis de Datos</span></span>
         <span class="leader-tag"><span data-i="en">Government Readiness</span><span data-i="es">Preparación Gubernamental</span></span>
       </div>
