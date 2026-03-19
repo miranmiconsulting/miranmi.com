@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miranmi Consulting & Analytics</title>
+<title>Veteran-Owned Business Consulting & Analytics | Miranmi | San Antonio, TX</title>
 <meta name="description" content="Miranmi Consulting & Analytics — Veteran-owned management consulting, business analytics, and strategic planning for public and private sector clients in San Antonio, Texas.">
 <link rel="canonical" href="https://miranmi.com/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Miranmi Consulting & Analytics LLC","url":"https://miranmi.com","logo":"https://miranmi.com/og-image.png","image":"https://miranmi.com/og-image.png","description":"Veteran-owned management consulting and analytics firm helping businesses grow with clarity, visibility, and momentum.","address":{"@type":"PostalAddress","addressLocality":"San Antonio","addressRegion":"TX","addressCountry":"US"},"telephone":"+12109528774","email":"info@miranmi.com","priceRange":"$$","areaServed":"San Antonio, Texas","knowsAbout":["Business Consulting","Data Analytics","Government Contracting","Digital Marketing","Small Business Support","HUB Certification"],"founder":{"@type":"Person","name":"Michael Miranda"},"sameAs":["https://www.linkedin.com/company/miranmiconsulting","https://www.facebook.com/people/Miranmi-Consulting-Analytics/61582203251002/","https://www.instagram.com/miranmiconsulting/","https://x.com/miranmiconsult","https://www.tiktok.com/@miranmiconsulting"]}</script>
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -546,6 +547,46 @@ section[id]:not(#home) { padding-top: 8px; }
 }
 .gov-card li::before {
   content: '—'; position: absolute; left: 0; color: var(--emerald); font-weight: 300;
+}
+
+/* ===== MEET THE FOUNDER ===== */
+.founder-section { padding: 64px 0; }
+.founder-grid {
+  display: grid; gap: 48px; align-items: center;
+}
+@media (min-width: 768px) {
+  .founder-grid { grid-template-columns: 0.45fr 0.55fr; gap: 64px; }
+}
+.founder-photo-wrap {
+  position: relative; max-width: 360px; margin: 0 auto;
+}
+@media (min-width: 768px) { .founder-photo-wrap { margin: 0 0 0 auto; } }
+.founder-photo {
+  width: 100%; border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 60px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.founder-photo-wrap:hover .founder-photo { transform: translateY(-4px); }
+.founder-photo-glow {
+  position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+  width: 180px; height: 100px; border-radius: 50%;
+  background: rgba(52,211,153,0.06); filter: blur(50px);
+  pointer-events: none;
+}
+.founder-label {
+  font-size: 13px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.25em; color: var(--emerald); margin-bottom: 12px;
+}
+.founder-name {
+  font-size: clamp(2rem, 4vw, 3rem); color: var(--white);
+  line-height: 1.1; margin-bottom: 20px;
+}
+.founder-bio {
+  font-size: 19px; line-height: 1.8; color: var(--text);
+  max-width: 480px;
 }
 
 /* ===== CTA ===== */
@@ -1362,6 +1403,31 @@ body.intro-active { overflow: hidden; }
         <div class="stat-badge"><span data-i="en">Bilingual</span><span data-i="es">Bilingüe</span></div>
         <p><span data-i="en">English & Spanish Support</span><span data-i="es">Soporte en Inglés y Español</span></p>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"><div class="line"></div><div class="dot"></div><div class="line"></div></div></div>
+
+<!-- ===== MEET THE FOUNDER ===== -->
+<section class="container founder-section">
+  <div class="founder-grid">
+    <div class="reveal-left">
+      <div class="founder-photo-wrap">
+        <div class="founder-photo-glow"></div>
+        <img src="/images/miranmi_headshot_optimized.png" alt="Michael Miranda — Founder, Miranmi Consulting & Analytics" class="founder-photo" width="400" height="500" loading="lazy">
+      </div>
+    </div>
+    <div class="reveal-right" style="transition-delay:0.15s">
+      <p class="founder-label"><span data-i="en">Meet the Founder</span><span data-i="es">Conozca al Fundador</span></p>
+      <h2 class="serif founder-name">Michael Miranda</h2>
+      <p class="founder-bio">
+        <span data-i="en">U.S. Army veteran with an MBA and an M.A. in Economics specializing in business data analysis and forecasting. Michael brings analytical rigor and real-world experience to help businesses build structure, gain visibility, and move forward with confidence.</span>
+        <span data-i="es">Veterano del Ejército de EE.UU. con un MBA y una M.A. en Economía con especialización en análisis de datos empresariales y pronósticos. Michael aporta rigor analítico y experiencia práctica para ayudar a las empresas a construir estructura, ganar visibilidad y avanzar con confianza.</span>
+      </p>
+      <a href="/about/" class="btn-outline" style="margin-top: 24px;">
+        <span data-i="en">Learn more</span><span data-i="es">Más información</span> <span>&rarr;</span>
+      </a>
     </div>
   </div>
 </section>
