@@ -76,6 +76,12 @@ if (window.matchMedia('(hover: none)').matches) {
   });
 })();
 
+// Info toggle for bullet items
+function toggleInfo(btn) {
+  const item = btn.closest('.bullet-item');
+  item.classList.toggle('info-open');
+}
+
 // Init
 updatePlaceholders();
 
