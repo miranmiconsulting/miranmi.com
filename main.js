@@ -76,11 +76,25 @@ if (window.matchMedia('(hover: none)').matches) {
   });
 })();
 
-// Info toggle for bullet items
-function toggleInfo(btn) {
+// Info toggle for bullet items — hover to open, tap on mobile
+document.querySelectorAll('.bullet-item .info-toggle').forEach(btn => {
   const item = btn.closest('.bullet-item');
-  item.classList.toggle('info-open');
-}
+  let timeout;
+  // Desktop: hover to open
+  if (window.matchMedia('(hover: hover)').matches) {
+    item.addEventListener('mouseenter', () => {
+      clearTimeout(timeout);
+      item.classList.add('info-open');
+    });
+    item.addEventListener('mouseleave', () => {
+      timeout = setTimeout(() => item.classList.remove('info-open'), 200);
+    });
+  }
+  // Mobile: tap to toggle
+  btn.addEventListener('click', () => {
+    item.classList.toggle('info-open');
+  });
+});
 
 // Init
 updatePlaceholders();
