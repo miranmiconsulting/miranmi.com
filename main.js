@@ -79,22 +79,13 @@ if (window.matchMedia('(hover: none)').matches) {
 // Info toggle for bullet items — hover to open, tap on mobile
 document.querySelectorAll('.bullet-item .info-toggle').forEach(btn => {
   const item = btn.closest('.bullet-item');
-  let openTimeout, closeTimeout;
-  // Desktop: hover to open with slight delay
+  // Desktop: hover to open
   if (window.matchMedia('(hover: hover)').matches) {
-    item.addEventListener('mouseenter', () => {
-      clearTimeout(closeTimeout);
-      openTimeout = setTimeout(() => item.classList.add('info-open'), 350);
-    });
-    item.addEventListener('mouseleave', () => {
-      clearTimeout(openTimeout);
-      closeTimeout = setTimeout(() => item.classList.remove('info-open'), 400);
-    });
+    item.addEventListener('mouseenter', () => item.classList.add('info-open'));
+    item.addEventListener('mouseleave', () => item.classList.remove('info-open'));
   }
   // Mobile: tap to toggle
-  btn.addEventListener('click', () => {
-    item.classList.toggle('info-open');
-  });
+  btn.addEventListener('click', () => item.classList.toggle('info-open'));
 });
 
 // Init
