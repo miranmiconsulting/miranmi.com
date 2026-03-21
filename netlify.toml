@@ -9,7 +9,6 @@
   status = 301
   force = true
 
-
 # Security headers
 [[headers]]
   for = "/*"
