@@ -4,24 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | Miranmi Consulting & Analytics</title>
-<meta name="description" content="Miranmi Consulting & Analytics is a veteran-owned consulting firm helping businesses gain clarity, improve structure, and prepare for growth.">
+<meta name="description" content="Meet Michael Miranda, founder of Miranmi Consulting & Analytics. Veteran-owned firm in San Antonio, TX offering strategy, analytics, and operations support.">
 <link rel="canonical" href="https://miranmi.com/about/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://miranmi.com/about/">
 <meta property="og:title" content="About | Miranmi Consulting & Analytics">
-<meta property="og:description" content="Miranmi Consulting & Analytics is a veteran-owned consulting firm helping businesses gain clarity, improve structure, and prepare for growth.">
+<meta property="og:description" content="Meet Michael Miranda, founder of Miranmi Consulting & Analytics. Veteran-owned firm in San Antonio, TX offering strategy, analytics, and operations support.">
 <meta property="og:image" content="https://miranmi.com/og-image.png">
 <meta property="og:site_name" content="Miranmi Consulting & Analytics">
-<meta name="twitter:card" content="summary">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+<link rel="alternate" hreflang="en" href="https://miranmi.com/about/">
+<link rel="alternate" hreflang="x-default" href="https://miranmi.com/about/">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About | Miranmi Consulting & Analytics">
-<meta name="twitter:description" content="Miranmi Consulting & Analytics is a veteran-owned consulting firm helping businesses gain clarity, improve structure, and prepare for growth.">
+<meta name="twitter:description" content="Meet Michael Miranda, founder of Miranmi Consulting & Analytics. Veteran-owned firm in San Antonio, TX offering strategy, analytics, and operations support.">
 <meta name="twitter:image" content="https://miranmi.com/og-image.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/styles.css" as="style">
 <link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "name": "Miranmi Consulting & Analytics",
+    "url": "https://miranmi.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Michael Miranda",
+      "jobTitle": "Founder",
+      "image": "https://miranmi.com/images/michael-miranda.png"
+    },
+    "description": "Veteran-owned consulting firm in San Antonio, TX helping businesses gain clarity, improve structure, and prepare for growth."
+  }
+,
+  "availableLanguage": ["en", "es"]
+}
+</script>
 </head>
 <body>
 <div class="scroll-line" id="scrollLine"></div>
@@ -56,18 +81,18 @@
 </svg>
       <div>
         <div class="nav-logo-text logo-font">MIRANMI</div>
-        <div class="nav-logo-sub"><span data-i="en">Consulting & Analytics</span><span data-i="es">Consultoría y Análisis</span></div>
+        <div class="nav-logo-sub"><span data-i="en" lang="en">Consulting & Analytics</span><span data-i="es" lang="es">Consultoría y Análisis</span></div>
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="/"><span data-i="en">Home</span><span data-i="es">Inicio</span></a></li>
-      <li><a href="/about/" class="active"><span data-i="en">About</span><span data-i="es">Nosotros</span></a></li>
-      <li><a href="/services/"><span data-i="en">Services</span><span data-i="es">Servicios</span></a></li>
-      <li><a href="/government/"><span data-i="en">Government</span><span data-i="es">Gobierno</span></a></li>
-      <li><a href="/contact/"><span data-i="en">Contact</span><span data-i="es">Contacto</span></a></li>
+      <li><a href="/"><span data-i="en" lang="en">Home</span><span data-i="es" lang="es">Inicio</span></a></li>
+      <li><a href="/about/" class="active"><span data-i="en" lang="en">About</span><span data-i="es" lang="es">Nosotros</span></a></li>
+      <li><a href="/services/"><span data-i="en" lang="en">Services</span><span data-i="es" lang="es">Servicios</span></a></li>
+      <li><a href="/government/"><span data-i="en" lang="en">Government</span><span data-i="es" lang="es">Gobierno</span></a></li>
+      <li><a href="/contact/"><span data-i="en" lang="en">Contact</span><span data-i="es" lang="es">Contacto</span></a></li>
     </ul>
     <div class="nav-right">
-      <a href="/contact/" class="nav-cta"><span data-i="en">Schedule a Consultation</span><span data-i="es">Agendar Consulta</span></a>
+      <a href="/contact/" class="nav-cta"><span data-i="en" lang="en">Schedule a Consultation</span><span data-i="es" lang="es">Agendar Consulta</span></a>
       <button class="lang-btn" onclick="toggleLang()" aria-label="Toggle English and Spanish">EN / ES</button>
       <button class="hamburger" onclick="openMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -80,30 +105,31 @@
     <button class="mobile-close" onclick="closeMenu()">&times;</button>
   </div>
   <nav class="mobile-nav">
-    <a href="/" onclick="closeMenu()"><span data-i="en">Home</span><span data-i="es">Inicio</span></a>
-    <a href="/about/" onclick="closeMenu()"><span data-i="en">About</span><span data-i="es">Nosotros</span></a>
-    <a href="/services/" onclick="closeMenu()"><span data-i="en">Services</span><span data-i="es">Servicios</span></a>
-    <a href="/government/" onclick="closeMenu()"><span data-i="en">Government</span><span data-i="es">Gobierno</span></a>
-    <a href="/contact/" onclick="closeMenu()"><span data-i="en">Contact</span><span data-i="es">Contacto</span></a>
+    <a href="/" onclick="closeMenu()"><span data-i="en" lang="en">Home</span><span data-i="es" lang="es">Inicio</span></a>
+    <a href="/about/" onclick="closeMenu()"><span data-i="en" lang="en">About</span><span data-i="es" lang="es">Nosotros</span></a>
+    <a href="/services/" onclick="closeMenu()"><span data-i="en" lang="en">Services</span><span data-i="es" lang="es">Servicios</span></a>
+    <a href="/government/" onclick="closeMenu()"><span data-i="en" lang="en">Government</span><span data-i="es" lang="es">Gobierno</span></a>
+    <a href="/contact/" onclick="closeMenu()"><span data-i="en" lang="en">Contact</span><span data-i="es" lang="es">Contacto</span></a>
   </nav>
   <div class="mobile-footer">
-    <a href="/contact/" onclick="closeMenu()"><span data-i="en">Schedule a Consultation</span><span data-i="es">Agendar Consulta</span> &rarr;</a>
+    <a href="/contact/" onclick="closeMenu()"><span data-i="en" lang="en">Schedule a Consultation</span><span data-i="es" lang="es">Agendar Consulta</span> &rarr;</a>
   </div>
 </div>
 
+<main id="main-content">
 <section class="page-hero container">
   <div class="reveal">
-    <div class="eyebrow"><span class="dot"></span> <span data-i="en">About Miranmi</span><span data-i="es">Sobre Miranmi</span></div>
-    <h1 class="serif"><span data-i="en">Built to help businesses move with more clarity, stronger structure, and better decisions</span><span data-i="es">Creado para ayudar a las empresas a moverse con más claridad, estructura más fuerte y mejores decisiones</span></h1>
-    <p class="hero-sub"><span data-i="en">Miranmi was created to support businesses that need more than ideas. They need practical insight, focused problem solving, and a path forward they can actually act on.</span><span data-i="es">Miranmi fue creado para apoyar a empresas que necesitan más que ideas. Necesitan conocimiento práctico, resolución enfocada de problemas y un camino hacia adelante sobre el cual puedan actuar.</span></p>
+    <div class="eyebrow"><span class="dot"></span> <span data-i="en" lang="en">About Miranmi</span><span data-i="es" lang="es">Sobre Miranmi</span></div>
+    <h1 class="serif"><span data-i="en" lang="en">Built to help businesses move with more clarity, stronger structure, and better decisions</span><span data-i="es" lang="es">Creado para ayudar a las empresas a moverse con más claridad, estructura más fuerte y mejores decisiones</span></h1>
+    <p class="hero-sub"><span data-i="en" lang="en">Miranmi was created to support businesses that need more than ideas. They need practical insight, focused problem solving, and a path forward they can actually act on.</span><span data-i="es" lang="es">Miranmi fue creado para apoyar a empresas que necesitan más que ideas. Necesitan conocimiento práctico, resolución enfocada de problemas y un camino hacia adelante sobre el cual puedan actuar.</span></p>
   </div>
 </section>
 <section class="section-pad section-alt"><div class="container">
   <div class="reveal">
-    <div class="section-label"><span data-i="en">Our purpose</span><span data-i="es">Nuestro propósito</span></div>
-    <h2 class="section-title serif"><span data-i="en">Why Miranmi exists</span><span data-i="es">Por qué existe Miranmi</span></h2>
-    <p class="section-text"><span data-i="en">Many businesses do not struggle because they lack effort. They struggle because priorities are scattered, systems are underdeveloped, information is not being used well, or growth opportunities arrive before the business is ready for them.</span><span data-i="es">Muchas empresas no luchan por falta de esfuerzo. Luchan porque las prioridades están dispersas, los sistemas están subdesarrollados, la información no se usa bien o las oportunidades de crecimiento llegan antes de que el negocio esté listo.</span></p>
-    <p class="section-text" style="margin-top:16px;"><span data-i="en">Miranmi exists to help close that gap by bringing more clarity to the business, more structure to the work, and more confidence to the decisions that shape what comes next.</span><span data-i="es">Miranmi existe para ayudar a cerrar esa brecha trayendo más claridad al negocio, más estructura al trabajo y más confianza a las decisiones que dan forma a lo que viene.</span></p>
+    <div class="section-label"><span data-i="en" lang="en">Our purpose</span><span data-i="es" lang="es">Nuestro propósito</span></div>
+    <h2 class="section-title serif"><span data-i="en" lang="en">Why Miranmi exists</span><span data-i="es" lang="es">Por qué existe Miranmi</span></h2>
+    <p class="section-text"><span data-i="en" lang="en">Many businesses do not struggle because they lack effort. They struggle because priorities are scattered, systems are underdeveloped, information is not being used well, or growth opportunities arrive before the business is ready for them.</span><span data-i="es" lang="es">Muchas empresas no luchan por falta de esfuerzo. Luchan porque las prioridades están dispersas, los sistemas están subdesarrollados, la información no se usa bien o las oportunidades de crecimiento llegan antes de que el negocio esté listo.</span></p>
+    <p class="section-text" style="margin-top:16px;"><span data-i="en" lang="en">Miranmi exists to help close that gap by bringing more clarity to the business, more structure to the work, and more confidence to the decisions that shape what comes next.</span><span data-i="es" lang="es">Miranmi existe para ayudar a cerrar esa brecha trayendo más claridad al negocio, más estructura al trabajo y más confianza a las decisiones que dan forma a lo que viene.</span></p>
   </div>
 </div></section>
 <section class="container founder-section">
@@ -115,36 +141,36 @@
       </div>
     </div>
     <div class="reveal-right" style="transition-delay:0.15s">
-      <p class="founder-label"><span data-i="en">Meet Michael Miranda</span><span data-i="es">Conozca a Michael Miranda</span></p>
-      <h2 class="serif founder-name" style="font-size:clamp(1.5rem,3vw,2.2rem);"><span data-i="en">A founder shaped by analysis, discipline, and practical problem solving</span><span data-i="es">Un fundador formado por el análisis, la disciplina y la resolución práctica de problemas</span></h2>
-      <p class="founder-bio"><span data-i="en">Michael Miranda is the Founder and Principal Consultant of Miranmi Consulting and Analytics. He is a U.S. Army veteran with an MBA and a Master&#39;s degree in Economics focused on business data analysis and forecasting.</span><span data-i="es">Michael Miranda es el Fundador y Consultor Principal de Miranmi Consultoría y Análisis. Es veterano del Ejército de EE.UU. con un MBA y una Maestría en Economía enfocada en análisis de datos empresariales y pronósticos.</span></p>
-      <p class="founder-bio" style="margin-top:16px;"><span data-i="en">He built Miranmi to help businesses get to the root of what is holding them back, make better use of their own information, and build real structure behind their growth. His approach combines analytical thinking, hands on execution, and a commitment to moving businesses from uncertainty toward clearer action.</span><span data-i="es">Construyó Miranmi para ayudar a las empresas a identificar lo que frena el progreso, hacer mejor uso de la información y construir una estructura más fuerte detrás del crecimiento.</span></p>
-      <p class="founder-bio" style="margin-top:16px;"><span data-i="en">Michael works especially well with small businesses, owner led companies, and organizations that need structured support but may not yet have in house analytics, operations, or strategy capacity.</span><span data-i="es">Michael trabaja especialmente bien con pequeñas empresas, compañías dirigidas por sus dueños y organizaciones que necesitan soporte estructurado pero aún no tienen capacidad interna de análisis, operaciones o estrategia.</span></p>
+      <p class="founder-label"><span data-i="en" lang="en">Meet Michael Miranda</span><span data-i="es" lang="es">Conozca a Michael Miranda</span></p>
+      <h2 class="serif founder-name" style="font-size:clamp(1.5rem,3vw,2.2rem);"><span data-i="en" lang="en">A founder shaped by analysis, discipline, and practical problem solving</span><span data-i="es" lang="es">Un fundador formado por el análisis, la disciplina y la resolución práctica de problemas</span></h2>
+      <p class="founder-bio"><span data-i="en" lang="en">Michael Miranda is the Founder and Principal Consultant of Miranmi Consulting and Analytics. He is a U.S. Army veteran with an MBA and a Master&#39;s degree in Economics focused on business data analysis and forecasting.</span><span data-i="es" lang="es">Michael Miranda es el Fundador y Consultor Principal de Miranmi Consultoría y Análisis. Es veterano del Ejército de EE.UU. con un MBA y una Maestría en Economía enfocada en análisis de datos empresariales y pronósticos.</span></p>
+      <p class="founder-bio" style="margin-top:16px;"><span data-i="en" lang="en">He built Miranmi to help businesses get to the root of what is holding them back, make better use of their own information, and build real structure behind their growth. His approach combines analytical thinking, hands on execution, and a commitment to moving businesses from uncertainty toward clearer action.</span><span data-i="es" lang="es">Construyó Miranmi para ayudar a las empresas a identificar lo que frena el progreso, hacer mejor uso de la información y construir una estructura más fuerte detrás del crecimiento.</span></p>
+      <p class="founder-bio" style="margin-top:16px;"><span data-i="en" lang="en">Michael works especially well with small businesses, owner led companies, and organizations that need structured support but may not yet have in house analytics, operations, or strategy capacity.</span><span data-i="es" lang="es">Michael trabaja especialmente bien con pequeñas empresas, compañías dirigidas por sus dueños y organizaciones que necesitan soporte estructurado pero aún no tienen capacidad interna de análisis, operaciones o estrategia.</span></p>
       <div class="cert-badges" style="margin-top:24px;">
-        <span class="cert-badge"><span data-i="en">U.S. Army Veteran</span><span data-i="es">Veterano del Ejército</span></span>
+        <span class="cert-badge"><span data-i="en" lang="en">U.S. Army Veteran</span><span data-i="es" lang="es">Veterano del Ejército</span></span>
         <span class="cert-badge">MBA</span>
-        <span class="cert-badge"><span data-i="en">M.A. Economics</span><span data-i="es">M.A. Economía</span></span>
-        <span class="cert-badge"><span data-i="en">Data Analysis & Forecasting</span><span data-i="es">Análisis de Datos y Pronósticos</span></span>
-        <span class="cert-badge"><span data-i="en">Bilingual Support</span><span data-i="es">Soporte Bilingüe</span></span>
+        <span class="cert-badge"><span data-i="en" lang="en">M.A. Economics</span><span data-i="es" lang="es">M.A. Economía</span></span>
+        <span class="cert-badge"><span data-i="en" lang="en">Data Analysis & Forecasting</span><span data-i="es" lang="es">Análisis de Datos y Pronósticos</span></span>
+        <span class="cert-badge"><span data-i="en" lang="en">Bilingual Support</span><span data-i="es" lang="es">Soporte Bilingüe</span></span>
       </div>
     </div>
   </div>
 </section>
 <section class="section-pad section-alt"><div class="container">
-  <div class="reveal"><div class="section-label"><span data-i="en">Guiding principles</span><span data-i="es">Principios guía</span></div>
-  <h2 class="section-title serif"><span data-i="en">What guides the work</span><span data-i="es">Lo que guía el trabajo</span></h2></div>
-  <div class="card-grid cols-4">    <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3><span data-i="en">Clarity first</span><span data-i="es">Claridad primero</span></h3><p><span data-i="en">Good decisions depend on understanding what matters most.</span><span data-i="es">Las buenas decisiones dependen de entender lo que más importa.</span></p><div class="bottom-line"></div></div>
-    <div class="card reveal" style="transition-delay:0.08s"><div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h3><span data-i="en">Structure matters</span><span data-i="es">La estructura importa</span></h3><p><span data-i="en">Growth is easier to sustain when systems, priorities, and processes are aligned.</span><span data-i="es">El crecimiento es más fácil de sostener cuando sistemas, prioridades y procesos están alineados.</span></p><div class="bottom-line"></div></div>
-    <div class="card reveal" style="transition-delay:0.16s"><div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3><span data-i="en">Practical over performative</span><span data-i="es">Práctico sobre performativo</span></h3><p><span data-i="en">Support should make the business easier to run, not more complicated to explain.</span><span data-i="es">El apoyo debe hacer que el negocio sea más fácil de operar, no más complicado de explicar.</span></p><div class="bottom-line"></div></div>
-    <div class="card reveal" style="transition-delay:0.24s"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3><span data-i="en">Real world usefulness</span><span data-i="es">Utilidad en el mundo real</span></h3><p><span data-i="en">The goal is not to create more theory. The goal is to help businesses act with more confidence and direction.</span><span data-i="es">El objetivo no es crear más teoría. El objetivo es ayudar a las empresas a actuar con más confianza y dirección.</span></p><div class="bottom-line"></div></div>
+  <div class="reveal"><div class="section-label"><span data-i="en" lang="en">Guiding principles</span><span data-i="es" lang="es">Principios guía</span></div>
+  <h2 class="section-title serif"><span data-i="en" lang="en">What guides the work</span><span data-i="es" lang="es">Lo que guía el trabajo</span></h2></div>
+  <div class="card-grid cols-4">    <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3><span data-i="en" lang="en">Clarity first</span><span data-i="es" lang="es">Claridad primero</span></h3><p><span data-i="en" lang="en">Good decisions depend on understanding what matters most.</span><span data-i="es" lang="es">Las buenas decisiones dependen de entender lo que más importa.</span></p><div class="bottom-line"></div></div>
+    <div class="card reveal" style="transition-delay:0.08s"><div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h3><span data-i="en" lang="en">Structure matters</span><span data-i="es" lang="es">La estructura importa</span></h3><p><span data-i="en" lang="en">Growth is easier to sustain when systems, priorities, and processes are aligned.</span><span data-i="es" lang="es">El crecimiento es más fácil de sostener cuando sistemas, prioridades y procesos están alineados.</span></p><div class="bottom-line"></div></div>
+    <div class="card reveal" style="transition-delay:0.16s"><div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3><span data-i="en" lang="en">Practical over performative</span><span data-i="es" lang="es">Práctico sobre performativo</span></h3><p><span data-i="en" lang="en">Support should make the business easier to run, not more complicated to explain.</span><span data-i="es" lang="es">El apoyo debe hacer que el negocio sea más fácil de operar, no más complicado de explicar.</span></p><div class="bottom-line"></div></div>
+    <div class="card reveal" style="transition-delay:0.24s"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3><span data-i="en" lang="en">Real world usefulness</span><span data-i="es" lang="es">Utilidad en el mundo real</span></h3><p><span data-i="en" lang="en">The goal is not to create more theory. The goal is to help businesses act with more confidence and direction.</span><span data-i="es" lang="es">El objetivo no es crear más teoría. El objetivo es ayudar a las empresas a actuar con más confianza y dirección.</span></p><div class="bottom-line"></div></div>
 </div>
 </div></section>
 <section class="section-pad"><div class="container">
   <div class="reveal">
-    <div class="section-label"><span data-i="en">Our clients</span><span data-i="es">Nuestros clientes</span></div>
-    <h2 class="section-title serif"><span data-i="en">Who Miranmi is built to serve</span><span data-i="es">Para quién fue creado Miranmi</span></h2>
-    <p class="section-text"><span data-i="en">Miranmi is best suited for small businesses, founders, and growing organizations that need a practical partner to help them get organized, see where the gaps are, and prepare for what comes next.</span><span data-i="es">Miranmi es ideal para pequeñas empresas, fundadores y organizaciones en crecimiento que necesitan apoyo práctico para entender qué frena el progreso, mejorar la estructura interna y prepararse para la siguiente etapa de crecimiento.</span></p>
-    <p class="section-text" style="margin-top:16px;"><span data-i="en">This includes businesses seeking stronger operations, clearer reporting, better positioning, or readiness for certifications and public sector opportunities.</span><span data-i="es">Esto incluye empresas que buscan operaciones más fuertes, reportes más claros, mejor posicionamiento o preparación para certificaciones y oportunidades del sector público.</span></p>
+    <div class="section-label"><span data-i="en" lang="en">Our clients</span><span data-i="es" lang="es">Nuestros clientes</span></div>
+    <h2 class="section-title serif"><span data-i="en" lang="en">Who Miranmi is built to serve</span><span data-i="es" lang="es">Para quién fue creado Miranmi</span></h2>
+    <p class="section-text"><span data-i="en" lang="en">Miranmi is best suited for small businesses, founders, and growing organizations that need a practical partner to help them get organized, see where the gaps are, and prepare for what comes next.</span><span data-i="es" lang="es">Miranmi es ideal para pequeñas empresas, fundadores y organizaciones en crecimiento que necesitan apoyo práctico para entender qué frena el progreso, mejorar la estructura interna y prepararse para la siguiente etapa de crecimiento.</span></p>
+    <p class="section-text" style="margin-top:16px;"><span data-i="en" lang="en">This includes businesses seeking stronger operations, clearer reporting, better positioning, or readiness for certifications and public sector opportunities.</span><span data-i="es" lang="es">Esto incluye empresas que buscan operaciones más fuertes, reportes más claros, mejor posicionamiento o preparación para certificaciones y oportunidades del sector público.</span></p>
   </div>
 </div></section>
 <section class="container section-pad">
@@ -153,10 +179,10 @@
       <div class="cta-glow1"></div>
       <div class="cta-glow2"></div>
       <div class="cta-inner" style="max-width:720px;">
-        <h2 class="serif"><span data-i="en">If your business needs clearer direction, let's start there</span><span data-i="es">Si su negocio necesita una dirección más clara, comencemos ahí</span></h2>
-        <p><span data-i="en">A conversation is often the best first step. We can talk through your goals, your challenges, and where support may create the most value.</span><span data-i="es">Una conversación es a menudo el mejor primer paso. Podemos hablar sobre sus objetivos, sus desafíos y dónde el apoyo puede crear más valor.</span></p>
+        <h2 class="serif"><span data-i="en" lang="en">If your business needs clearer direction, let's start there</span><span data-i="es" lang="es">Si su negocio necesita una dirección más clara, comencemos ahí</span></h2>
+        <p><span data-i="en" lang="en">A conversation is often the best first step. We can talk through your goals, your challenges, and where support may create the most value.</span><span data-i="es" lang="es">Una conversación es a menudo el mejor primer paso. Podemos hablar sobre sus objetivos, sus desafíos y dónde el apoyo puede crear más valor.</span></p>
         <div style="margin-top:32px;">
-          <a href="/contact/" class="btn-primary"><span data-i="en">Schedule a Consultation</span><span data-i="es">Agendar Consulta</span> <span>&rarr;</span></a>
+          <a href="/contact/" class="btn-primary"><span data-i="en" lang="en">Schedule a Consultation</span><span data-i="es" lang="es">Agendar Consulta</span> <span>&rarr;</span></a>
           
         </div>
       </div>
@@ -164,10 +190,19 @@
   </div>
 </section>
 
+</main>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-inner">
       <div class="footer-copy">&copy; 2026 Miranmi Consulting &amp; Analytics LLC</div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/about/">About</a>
+        <a href="/government/">Government</a>
+        <a href="/contact/">Contact</a>
+      </nav>
       <div class="footer-social">
         <a href="https://www.linkedin.com/company/miranmiconsulting" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="https://www.facebook.com/people/Miranmi-Consulting-Analytics/61582203251002/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -175,18 +210,18 @@
         <a href="https://x.com/miranmiconsult" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="https://www.tiktok.com/@miranmiconsulting" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
       </div>
-      <div class="footer-tagline"><span data-i="en">Clarity. Structure. Growth.</span><span data-i="es">Claridad. Estructura. Crecimiento.</span></div>
+      <div class="footer-tagline"><span data-i="en" lang="en">Clarity. Structure. Growth.</span><span data-i="es" lang="es">Claridad. Estructura. Crecimiento.</span></div>
     </div>
   </div>
 </footer>
 <div class="cookie-banner" id="cookieBanner">
   <p>
-    <span data-i="en">This site uses cookies to improve your experience. By continuing to browse, you agree to our use of cookies.</span>
-    <span data-i="es">Este sitio utiliza cookies para mejorar su experiencia. Al continuar navegando, acepta el uso de cookies.</span>
+    <span data-i="en" lang="en">This site uses cookies to improve your experience. By continuing to browse, you agree to our use of cookies.</span>
+    <span data-i="es" lang="es">Este sitio utiliza cookies para mejorar su experiencia. Al continuar navegando, acepta el uso de cookies.</span>
   </p>
   <div style="display:flex;gap:8px;">
-    <button class="cookie-btn cookie-accept" onclick="acceptCookies()"><span data-i="en">Accept</span><span data-i="es">Aceptar</span></button>
-    <button class="cookie-btn cookie-decline" onclick="declineCookies()"><span data-i="en">Decline</span><span data-i="es">Rechazar</span></button>
+    <button class="cookie-btn cookie-accept" onclick="acceptCookies()"><span data-i="en" lang="en">Accept</span><span data-i="es" lang="es">Aceptar</span></button>
+    <button class="cookie-btn cookie-decline" onclick="declineCookies()"><span data-i="en" lang="en">Decline</span><span data-i="es" lang="es">Rechazar</span></button>
   </div>
 </div>
 
