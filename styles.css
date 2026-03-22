@@ -455,13 +455,15 @@ section[id] { scroll-margin-top: 72px; }
 .bullet-grid { display: grid; gap: 6px; margin-top: 24px; }
 @media (min-width: 640px) { .bullet-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 900px) { .bullet-grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
-.bullet-grid .bullet-full { grid-column: 1 / -1; max-width: 560px; justify-self: center; }
+.bullet-grid .bullet-full { grid-column: 1 / -1; justify-self: center; }
 .bullet-item {
-  display: flex; align-items: flex-start; gap: 12px; flex-wrap: wrap;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
   padding: 10px 16px; border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02);
   transition: all 0.6s ease;
 }
+.bullet-item > .bullet-dot,
+.bullet-item > .info-toggle { flex-shrink: 0; }
 .bullet-item:hover { border-color: rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); }
 .bullet-item.info-open { border-color: rgba(52,211,153,0.15); background: rgba(52,211,153,0.04); }
 .bullet-check {
@@ -471,10 +473,10 @@ section[id] { scroll-margin-top: 72px; }
 }
 .bullet-check svg { width: 12px; height: 12px; stroke: var(--emerald); fill: none; stroke-width: 2.5; }
 .bullet-dot {
-  margin-top: 8px; width: 8px; height: 8px; min-width: 8px; border-radius: 50%;
+  width: 8px; height: 8px; min-width: 8px; border-radius: 50%;
   background: var(--emerald); box-shadow: 0 0 8px rgba(52,211,153,0.4);
 }
-.bullet-item > span { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.6); flex: 1; }
+.bullet-item > span { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.6); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* Info icon on bullet items and cards */
 @keyframes info-pulse {
