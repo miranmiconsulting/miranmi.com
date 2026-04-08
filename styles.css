@@ -726,6 +726,29 @@ body.intro-active { overflow: hidden; }
 .cookie-decline { background: transparent; border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
 .cookie-decline:hover { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
 
+/* ===== LEGAL PAGES ===== */
+.legal-content { border-radius: 16px; border: 1px solid var(--border); background: var(--bg-card); padding: 28px; }
+@media (min-width: 640px) { .legal-content { padding: 40px; } }
+.legal-date { margin-bottom: 32px; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.25); }
+.legal-section { margin-bottom: 32px; }
+.legal-section h2 { margin-bottom: 12px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: rgba(255,255,255,0.8); }
+.legal-section p { font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
+.legal-section ul { list-style: disc; padding-left: 20px; margin-top: 8px; }
+.legal-section li { font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
+.legal-section li.legal-emphasis { font-weight: 500; color: rgba(255,255,255,0.6); }
+.legal-section a { color: rgba(52,211,153,0.7); transition: color 0.3s; }
+.legal-section a:hover { color: var(--emerald); }
+.legal-contact { font-weight: 500; color: rgba(255,255,255,0.6); }
+
+/* ===== FOOTER COMPLIANCE ===== */
+.footer-compliance { margin-bottom: 20px; padding: 16px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.015); }
+.footer-compliance p { font-size: 12px; line-height: 1.8; color: rgba(255,255,255,0.3); }
+.footer-branding { margin-bottom: 20px; font-size: 12px; line-height: 1.7; color: rgba(255,255,255,0.2); }
+.footer-legal-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 12px; font-size: 13px; }
+.footer-legal-links a { color: rgba(255,255,255,0.25); transition: color 0.3s; text-decoration: none; }
+.footer-legal-links a:hover { color: rgba(255,255,255,0.5); }
+.footer-legal-links .sep { color: rgba(255,255,255,0.1); }
+
 /* ===== TILT ===== */
 .card { transition: all 0.7s ease, transform 0.4s ease; }
 .card.tilt-active, .flip-card.tilt-active, .service-card.tilt-active { transition: all 0.7s ease, transform 0.15s ease; }
