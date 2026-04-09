@@ -1,27 +1,56 @@
-// Form submission
+// Contact form submission (Formspree)
+// Replace YOUR_FORM_ID with your Formspree endpoint ID from https://formspree.io
+const FORMSPREE_ID = 'xpwrzwqo';
+
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
     const status = document.getElementById('formStatus');
     const btn = form.querySelector('button[type="submit"]');
+    const es = document.body.classList.contains('lang-es');
+
+    // Disable button and show loading
     btn.disabled = true;
+    btn.style.opacity = '0.6';
+    status.className = 'form-status';
+    status.textContent = es ? 'Enviando...' : 'Sending...';
+
     try {
-      const resp = await fetch('/', {
+      const formData = new FormData(form);
+      // Include the Spanish select value if in ES mode
+      const esSelect = form.querySelector('[data-lang="es"] select');
+      const enSelect = form.querySelector('[data-lang="en"] select');
+      if (es && esSelect && esSelect.value) {
+        formData.set('support', esSelect.value);
+      } else if (!es && enSelect && enSelect.value) {
+        formData.set('support', enSelect.value);
+      }
+
+      const resp = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
+        body: formData,
+        headers: { 'Accept': 'application/json' }
       });
+
       if (resp.ok) {
         status.className = 'form-status success';
-        const es = document.body.classList.contains('lang-es');
-        status.textContent = es ? 'Mensaje enviado. Nos comunicaremos pronto.' : 'Message sent. We will be in touch soon.';
+        status.textContent = es
+          ? 'Mensaje enviado con éxito. Nos pondremos en contacto pronto.'
+          : 'Message sent successfully. We will be in touch soon.';
         form.reset();
-      } else { throw new Error(); }
-    } catch {
+      } else {
+        const data = await resp.json();
+        throw new Error(data.error || 'Submission failed');
+      }
+    } catch (err) {
       status.className = 'form-status error';
-      status.textContent = 'Something went wrong. Please try again or email info@miranmi.com.';
+      status.textContent = es
+        ? 'Algo salió mal. Intente de nuevo o envíe un correo a info@miranmi.com.'
+        : 'Something went wrong. Please try again or email info@miranmi.com.';
     }
+
     btn.disabled = false;
+    btn.style.opacity = '';
   });
 }

@@ -662,26 +662,33 @@ select.form-input option { background: #1a1a2e; color: #fff; }
 /* ===== FOOTER ===== */
 .footer {
   position: relative; z-index: 10; margin-top: 0;
-  border-top: 1px solid rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.06);
   flex-shrink: 0;
 }
-.footer-inner {
-  display: flex; flex-direction: column; gap: 16px; padding: 28px 0 24px;
+.footer-top {
+  display: grid; gap: 32px; padding: 40px 0 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
-@media (min-width: 1024px) { .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; } }
-.footer-copy { font-size: 14px; font-weight: 500; color: var(--text-muted); }
-.footer-tagline { font-size: 14px; color: rgba(255,255,255,0.15); }
-.footer-social { display: flex; align-items: center; gap: 16px; }
+@media (min-width: 768px) { .footer-top { grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; } }
+.footer-brand p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.35); margin-top: 12px; max-width: 280px; }
+.footer-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+.footer-bottom {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 0;
+}
+.footer-copy { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.2); }
+.footer-tagline { font-size: 13px; color: rgba(255,255,255,0.12); }
+.footer-social { display: flex; align-items: center; gap: 12px; }
 .footer-social a {
   display: flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; border-radius: 8px;
+  width: 32px; height: 32px; border-radius: 8px;
   border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);
   color: rgba(255,255,255,0.25); transition: all 0.3s;
 }
 .footer-social a:hover { border-color: var(--emerald-border); color: var(--emerald); background: rgba(52,211,153,0.06); }
-.footer-social a svg { width: 16px; height: 16px; fill: currentColor; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
-.footer-nav a { font-size: 14px; color: var(--text-muted); transition: color 0.3s; }
+.footer-social a svg { width: 14px; height: 14px; fill: currentColor; }
+.footer-nav { display: flex; flex-direction: column; gap: 10px; }
+.footer-nav a { font-size: 14px; color: rgba(255,255,255,0.35); transition: color 0.3s; }
 .footer-nav a:hover { color: var(--emerald); }
 
 /* ===== REVEAL ANIMATIONS ===== */
@@ -798,18 +805,18 @@ body.intro-active { overflow: hidden; }
 .legal-contact-card p { margin-bottom: 6px; }
 .legal-contact-name { font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 14px; }
 .legal-label { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.25); min-width: 56px; margin-right: 8px; }
-.footer-legal-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 12px; font-size: 13px; }
-.footer-legal-links a { color: rgba(255,255,255,0.25); transition: color 0.3s; text-decoration: none; }
+.footer-legal-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-legal-links a { font-size: 14px; color: rgba(255,255,255,0.35); transition: color 0.3s; text-decoration: none; }
 .footer-legal-links a:hover { color: rgba(255,255,255,0.5); }
-.footer-legal-links .sep { color: rgba(255,255,255,0.1); }
+.footer-legal-links .sep { display: none; }
 
 /* ===== MOBILE UX FIXES ===== */
 @media (max-width: 639px) {
   .section-pad { padding: 36px 0; }
   .page-hero { padding: 48px 0 32px; }
-  .footer-inner { gap: 14px; padding: 24px 0 20px; }
-  .footer-nav { gap: 6px 16px; }
-  .footer-social a { width: 32px; height: 32px; }
+  .footer-top { padding: 28px 0 20px; gap: 24px; }
+  .footer-bottom { padding: 16px 0; }
+  .footer-social a { width: 30px; height: 30px; }
   .cta-section { padding: 28px 20px; }
   .cta-section h2 { font-size: clamp(1.3rem, 5vw, 1.8rem); }
   .cta-section p { font-size: 15px; }
