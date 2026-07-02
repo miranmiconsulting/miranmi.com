@@ -91,13 +91,3 @@ document.querySelectorAll('.bullet-item .info-toggle').forEach(btn => {
 // Init
 updatePlaceholders();
 
-// Cookie banner
-(function() {
-  const banner = document.getElementById('cookieBanner');
-  if (banner && !localStorage.getItem('miranmi_cookies')) {
-    setTimeout(() => banner.classList.add('show'), 2000);
-  }
-})();
-function acceptCookies() { localStorage.setItem('miranmi_cookies', 'accepted'); document.getElementById('cookieBanner').classList.remove('show'); }
-function declineCookies() { localStorage.setItem('miranmi_cookies', 'declined'); document.getElementById('cookieBanner').classList.remove('show'); }
-
