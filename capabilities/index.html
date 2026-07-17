@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capabilities | SDVOSB Program Evaluation & Analytics | Miranmi | San Antonio, TX</title>
-<meta name="description" content="Miranmi Consulting & Analytics capability statement: SBA-certified SDVOSB/VOSB firm in San Antonio, TX. Program evaluation, economic impact analysis, dashboards, and training development. NAICS 541611, 541690, 541720, 541910.">
+<title>Capabilities | SDVOSB Evaluation & Analytics | Miranmi</title>
+<meta name="description" content="Capability statement for Miranmi Consulting & Analytics, an SBA-certified SDVOSB/VOSB firm in San Antonio, TX. Evaluation, economics, dashboards, training.">
 <link rel="canonical" href="https://www.miranmi.com/capabilities/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.miranmi.com/capabilities/">
@@ -37,7 +37,7 @@
     "@type": "ProfessionalService",
     "name": "Miranmi Consulting & Analytics",
     "url": "https://www.miranmi.com",
-    "email": "michael.miranda@miranmi.com",
+    "email": "info@miranmi.com",
     "telephone": "+1-210-952-8774",
     "naics": "541611",
     "address": {
@@ -98,8 +98,8 @@
     </ul>
     <div class="nav-right">
       <a href="/contact/" class="nav-cta"><span data-i="en" lang="en">Free 30-Minute Consultation</span><span data-i="es" lang="es">Consulta Gratis de 30 Minutos</span></a>
-      <button class="lang-btn" onclick="toggleLang()" aria-label="Toggle English and Spanish">EN / ES</button>
-      <button class="hamburger" onclick="openMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="lang-btn" onclick="toggleLang()" aria-label="Toggle English and Spanish" aria-pressed="false">EN / ES</button>
+      <button class="hamburger" onclick="openMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mMenu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
@@ -107,7 +107,7 @@
 <div class="mobile-menu" id="mMenu">
   <div class="mobile-header">
     <div class="nav-logo" style="gap:8px;"><div><div class="nav-logo-text logo-font" style="font-size:17px;">MIRANMI</div></div></div>
-    <button class="mobile-close" onclick="closeMenu()">&times;</button>
+    <button class="mobile-close" onclick="closeMenu()" aria-label="Close menu">&times;</button>
   </div>
   <nav class="mobile-nav">
     <a href="/" onclick="closeMenu()"><span data-i="en" lang="en">Home</span><span data-i="es" lang="es">Inicio</span></a>
@@ -160,16 +160,21 @@
   </div>
   <div class="certs-grid">
     <div class="cert-card reveal">
-      <div class="cert-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="cert-card-logos">
+        <span class="cert-mark"><img src="/images/badge-sba-sdvosb.png" alt="SBA Service-Disabled Veteran-Owned Certified" width="120" height="150" loading="lazy"></span>
+        <span class="cert-mark"><img src="/images/badge-sba-vosb.png" alt="SBA Veteran-Owned Certified" width="120" height="150" loading="lazy"></span>
+      </div>
       <h3><span data-i="en" lang="en">SBA-Certified SDVOSB &amp; VOSB</span><span data-i="es" lang="es">SDVOSB y VOSB Certificada por la SBA</span></h3>
       <p><span data-i="en" lang="en">Service-Disabled Veteran-Owned Small Business, certified by the U.S. Small Business Administration. Effective May 4, 2026.</span><span data-i="es" lang="es">Pequeña Empresa de Veterano con Discapacidad de Servicio, certificada por la Administración de Pequeñas Empresas de EE.UU. Vigente desde el 4 de mayo de 2026.</span></p>
     </div>
     <div class="cert-card reveal" style="transition-delay:0.08s">
-      <div class="cert-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="cert-card-logos">
+        <span class="cert-mark"><img src="/images/badge-vethub.png" alt="Texas VetHUB Certified Vendor" width="150" height="123" loading="lazy"></span>
+      </div>
       <h3><span data-i="en" lang="en">Texas VetHUB</span><span data-i="es" lang="es">Texas VetHUB</span></h3>
       <p><span data-i="en" lang="en">Certified Veteran-Owned Business, Texas Comptroller. VID 1414337641700 · Expires March 24, 2030.</span><span data-i="es" lang="es">Empresa de Veterano Certificada por el Contralor de Texas. VID 1414337641700 · Vence el 24 de marzo de 2030.</span></p>
     </div>
-    <div class="certs-full reveal" style="transition-delay:0.16s">
+        <div class="certs-full reveal" style="transition-delay:0.16s">
       <div class="certs-full-inner">
         <div class="cert-card-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
         <h3><span data-i="en" lang="en">SCTRCA Certified: Six Designations</span><span data-i="es" lang="es">Certificada por SCTRCA: Seis Designaciones</span></h3>
@@ -203,12 +208,13 @@
   </div>
 </div></section>
 
-<section class="section-pad"><div class="container">
+<section class="section-pad-sm"><div class="container">
   <div class="reveal">
-    <div class="section-label"><span data-i="en" lang="en">Why Miranmi</span><span data-i="es" lang="es">Por qué Miranmi</span></div>
-    <h2 class="section-title serif"><span data-i="en" lang="en">Senior-led, credentialed, audit-ready</span><span data-i="es" lang="es">Liderazgo senior, credenciales y resultados listos para auditoría</span></h2>
-    <p class="section-text"><span data-i="en" lang="en">Miranmi delivers senior-led work: every engagement is scoped, analyzed, and defended by a principal, never handed down to junior staff. That principal is founder Michael Miranda, a U.S. Army veteran and economist (MA in Economics, MBA, UTSA Data Science certificate, Lean Six Sigma).</span><span data-i="es" lang="es">Miranmi entrega trabajo dirigido por un consultor senior: cada proyecto es delimitado, analizado y defendido por un consultor principal, nunca delegado a personal junior. Ese consultor principal es el fundador Michael Miranda, veterano del Ejército de EE.UU. y economista (MA en Economía, MBA, certificado en Ciencia de Datos de UTSA y Lean Six Sigma).</span></p>
-    <p class="section-text" style="margin-top:16px;"><span data-i="en" lang="en">The firm's methods are built on a career spanning military, federal, and commercial analysis: $1.5M+ in operational inefficiencies identified, datasets of more than one million records analyzed, 1,200+ personnel trained, and service on the Army's 68W Health Care Specialist Curriculum Committee. Findings are built to be defended before councils, boards, and legislatures. For larger pursuits, Miranmi scales through a vetted bench of teaming partners under executed agreements. Proposals have been submitted as prime and subcontractor to municipal, state, and higher-education buyers across Texas. References available upon request.</span><span data-i="es" lang="es">Los métodos de la firma se basan en una carrera que abarca análisis militar, federal y comercial: más de $1.5M en ineficiencias operativas identificadas, bases de datos de más de un millón de registros analizadas, más de 1,200 personas capacitadas y servicio en el Comité Curricular de Especialistas en Salud 68W del Ejército. Los hallazgos están diseñados para defenderse ante concejos, juntas directivas y legislaturas. Para proyectos de mayor escala, Miranmi se apoya en un equipo verificado de socios con acuerdos formalizados. Se han presentado propuestas como contratista principal y subcontratista ante compradores municipales, estatales y de educación superior en Texas. Referencias disponibles a solicitud.</span></p>
+    <div class="section-label"><span data-i="en" lang="en">How we work</span><span data-i="es" lang="es">Cómo trabajamos</span></div>
+    <h2 class="section-title serif"><span data-i="en" lang="en">One principal, accountable end to end</span><span data-i="es" lang="es">Un consultor principal, responsable de principio a fin</span></h2>
+    <p class="section-text"><span data-i="en" lang="en">Every engagement is scoped, analyzed, and delivered by the same principal. Nothing is handed down; the person you meet in the briefing is the person who does the analysis.</span><span data-i="es" lang="es">Cada proyecto es delimitado, analizado y entregado por el mismo consultor principal. Nada se delega; la persona que usted conoce en la presentación es la misma que realiza el análisis.</span></p>
+    <p class="section-text" style="margin-top:16px;"><span data-i="en" lang="en">Methods, data sources, and assumptions are documented as the work is done, so findings can be examined and defended when a council, board, or auditor asks how a number was produced. For larger pursuits, Miranmi teams with vetted partners under executed agreements. References available upon request.</span><span data-i="es" lang="es">Los métodos, las fuentes de datos y los supuestos se documentan a medida que se realiza el trabajo, de modo que los hallazgos puedan examinarse y defenderse cuando un concejo, una junta o un auditor pregunte cómo se produjo una cifra. Para proyectos de mayor escala, Miranmi colabora con socios verificados bajo acuerdos formalizados. Referencias disponibles a solicitud.</span></p>
+
   </div>
 </div></section>
 
@@ -238,7 +244,7 @@
           <div><div class="nav-logo-text logo-font" style="font-size:18px;">MIRANMI</div>
           <div class="nav-logo-sub" style="margin-top:2px;"><span data-i="en" lang="en">Consulting & Analytics</span><span data-i="es" lang="es">Consultoría y Análisis</span></div></div>
         </div>
-        <p><span data-i="en" lang="en">Helping businesses build clarity, strengthen structure, and grow with confidence.</span><span data-i="es" lang="es">Ayudamos a las empresas a construir claridad, fortalecer su estructura y crecer con confianza.</span></p>
+        <p><span data-i="en" lang="en">Independent evaluation, analytics, and training for public agencies and growing businesses.</span><span data-i="es" lang="es">Evaluación independiente, análisis y capacitación para agencias públicas y empresas en crecimiento.</span></p>
         <div class="footer-social" style="margin-top:20px;">
           <a href="https://www.linkedin.com/company/miranmiconsulting" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           <a href="https://www.facebook.com/people/Miranmi-Consulting-Analytics/61582203251002/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>

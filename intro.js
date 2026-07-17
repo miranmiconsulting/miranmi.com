@@ -6,7 +6,7 @@
   if (played) { overlay.classList.add('intro-done'); return; }
   document.body.classList.add('intro-active');
   requestAnimationFrame(() => overlay.classList.add('intro-playing'));
-  setTimeout(() => finishIntro(), 5200);
+  setTimeout(() => finishIntro(), 2750);
 })();
 function finishIntro() {
   const overlay = document.getElementById('introOverlay');

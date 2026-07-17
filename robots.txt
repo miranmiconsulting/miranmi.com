@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://miranmi.com/sitemap.xml
+Sitemap: https://www.miranmi.com/sitemap.xml

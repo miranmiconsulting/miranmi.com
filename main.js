@@ -12,14 +12,26 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // Mobile menu
-function openMenu() { document.getElementById('mOverlay').classList.add('open'); document.getElementById('mMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeMenu() { document.getElementById('mOverlay').classList.remove('open'); document.getElementById('mMenu').classList.remove('open'); document.body.style.overflow = ''; }
+function openMenu() { document.getElementById('mOverlay').classList.add('open'); document.getElementById('mMenu').classList.add('open'); document.body.style.overflow = 'hidden'; const h = document.querySelector('.hamburger'); if (h) h.setAttribute('aria-expanded', 'true'); }
+function closeMenu() { document.getElementById('mOverlay').classList.remove('open'); document.getElementById('mMenu').classList.remove('open'); document.body.style.overflow = ''; const h = document.querySelector('.hamburger'); if (h) h.setAttribute('aria-expanded', 'false'); }
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
 
 // Language toggle
 function toggleLang() {
-  document.body.classList.toggle('lang-es');
+  const es = document.body.classList.toggle('lang-es');
+  document.documentElement.lang = es ? 'es' : 'en';
+  const btn = document.querySelector('.lang-btn');
+  if (btn) btn.setAttribute('aria-pressed', es ? 'true' : 'false');
+  syncLangFields();
   updatePlaceholders();
 }
+function syncLangFields() {
+  const es = document.body.classList.contains('lang-es');
+  document.querySelectorAll('[data-lang] select, [data-lang] input, [data-lang] textarea').forEach(el => {
+    el.disabled = (el.closest('[data-lang]').getAttribute('data-lang') === 'es') !== es;
+  });
+}
+syncLangFields();
 function updatePlaceholders() {
   const es = document.body.classList.contains('lang-es');
   const f = document.getElementById('contactForm');
